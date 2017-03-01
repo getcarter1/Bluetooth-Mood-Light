@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Mood Light</title>
+	<!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />-->
+	<script src="core/jquery/jquery-2.1.0.min.js"></script>
+	<script src="core/jquery/jquery.nouislider.min.js"></script>
+	<script src="core/jquery/jquery.knob.js"></script>
+	<script src="core/jquery/insQ.min.js"></script>
+	<script src="settings.js"></script>
+	<script src="core/bridge.js"></script>
+	<script src="core/framework.js"></script>
+	<script src="rgbsend.js"></script> <!--hex to RGB converter function-->
+	<script src="jscolor.js"></script> <!--A java script colour picker-->
+	<!--<script src="core/involt.js"></script>-->
+	
+	<link rel="stylesheet" type="text/css" href="css/framework.css">
+
+
+</head>
+
+<body style="text-align:center;">
+	<!--This is the homepage of your App. Put your Layout Here-->
+
+<input class="jscolor {width:243, height:150, position:'bottom',borderColor:'#FFF', insetColor:'#FFF', backgroundColor:'#666'}" id="myColor" value="#ff0080" onchange="myFunction()"</input>  
+<!--the onchange= calls myFunction whenever there is a change in the colour picker-->
+
+
+<script>
+(function(a){   //function to convert hex to RGB
+a["toRGB"]=function(a){
+var b=parseInt(a,16);return[b>>16,b>>8&255,b&255]};
+a["toHex"]=function(a,b,c){
+return(c|b<<8|a<<16|1<<24).toString(16).slice(1)}})(this);
+
+function myFunction() { <!--myFunction takes output of colorpicker in hex, runs the hex output through a hex to RGB converter function then sends comma separated RGB values to the devices bluetooth serial adapter. -->
+    var x = document.getElementById("myColor").value;
+	//$(this).sendRawString(x); // Uncomment if you want to send hex values EG: FF,FF,FF	
+
+    var rgb = toRGB(x); //send hex colour value to java script rgb converter 
+    $(this).sendRawString(rgb); //this sends rgb data to serial
+
+
+	
+}
+</script>	
+	
+	<!-- <button id="RedLed">RED LED</button> -->
+	<button class="ard switch P3 value-0-1">RED</button>  //toggle pin 3 between 0 off and 1 on
+	
+	<!-- <button id="BlueLed">BLUE LED</button> -->
+	<button class="ard switch P4 value-0-1 ">BLUE</button> //toggle pin 4 between 0 off and 1 on,
+	 
+	
+	
+</body>
+	
+	<div id="involtThankYou">This be one ugly page!.</div> // just calling it how it is.
+
+
+
+
+
+</body>
+
+</html>
