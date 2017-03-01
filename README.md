@@ -1,4 +1,5 @@
 
+
 # arduino-ble
 Arduino bluetoothBLE + phone gap
 
@@ -10,6 +11,7 @@ BLE is troublesome. Operational with Bluetooth 2.1
 
 
 INSTALLATION
+
 1. Download this repo.
 
 2. From the downloaded Arduino\Mood_light\libraries directory, copy the Neopixel directory into your Arduino library directory.
