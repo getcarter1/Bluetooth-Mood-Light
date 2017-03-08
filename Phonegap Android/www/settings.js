@@ -36,27 +36,21 @@
 		BLUETOOTH DISCOVERY DURATION
 		In some cases it will take more time for some devices to find them.
 	*/
-	 var defaultBtAddress = "30:14:12:03:16:79";  //firefox   Change to the MAC address of your module 
-	//var defaultBtAddress = "74:DA:EA:AF:A7:CE";  //hmSoft     Second one because I have 2 bluetooth modules and uncommenting one is faster :p
+	 var defaultBtAddress = "30:14:12:03:16:79";  //firefox
+	//var defaultBtAddress = "74:DA:EA:AF:A7:CE";  //hmSoft
 	var discoveryDuration = 3000;
 	/*
 		CONNECTION UUID (Serial Port Profile)
 	*/
-	 var uuid = "00001101-0000-1000-8000-00805f9b34fb"; //FIREFOX  HC-05 Bluetooth 2.1
-	//var uuid = "0000ffe0-0000-1000-8000-00805f9b34fb";    //HMSoft HM10 BLE. work in progress. BLE is not yet functional.
+	 var uuid = "00001101-0000-1000-8000-00805f9b34fb"; //FIREFOX
+	 //var uuid = "0000ffe1-0000-1000-8000-00805f9b34fb";    //HMSoft
 	/*
 		BITRATE
 		The bitrate should remain unchanged. 
-		If you have to lower the speed, don't overload the port from arduino. READ: buffer overflow.
+		If you have to lower the speed don't overload the port from arduino.
 		Bitrate in software and hardware must be the same.
-		115200 is a probably a bad option if you are using a 16Mhz MCU such as the Atmega328P on an Arduino Uno.
-		We have to fit our baud rate into the clock cycles of the MCU. 
-		115200 baud has 2.1% error rate on a 16MHz MCU
-		230400 is outside of scope at 8.5% error
-		The baud rates with best fit to a clock speed of 16MHz is either 38400 or 76800 both of which have an reror rate of 0.2%
-		Here is a site with some nice tables of baud rate errors  http://wormfood.net/avrbaudcalc.php
 	*/
-	var bitrate = 38400;   //This needs to match both the Arduino sketch and your Bluetooth modules baud settings.
+	var bitrate = 57600;
 	/*
 		RECEIVED VALUES UI UPDATE RATE
 		Set update rate of read-only elements in miliseconds. 
