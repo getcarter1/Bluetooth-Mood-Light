@@ -1,4 +1,3 @@
-Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800)Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800) 
 
 # Bluetooth Mood-Light
 Arduino bluetooth +WS2182 LEDs + phonegap app
