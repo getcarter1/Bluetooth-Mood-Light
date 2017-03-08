@@ -1,4 +1,4 @@
-
+Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800)Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800) 
 
 # Bluetooth Mood-Light
 Arduino bluetooth +WS2182 LEDs + phonegap app
@@ -16,12 +16,12 @@ INSTALLATION
 
 2. From the downloaded Arduino\Mood_light\libraries directory, copy the Neopixel directory into your Arduino library directory.
 
-3. Open the Mood_Light sketch and modify the serial baudrate, Serial.begin(38400) Change this to match your Bluetooth modules baud.
+3. Open the Mood_Light sketch and modify the serial baudrate, Serial.begin(38400) Change this to match your Bluetooth modules baud. Modify the line containing " Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800) ". 8 is the number of leds I am using and 6 is the Arduino pin I am connecting the led data pin to. Change the values to suit your setup. Save the sketch !!
 
-4. Make sure you do not have the bluetooth module connected to your Arduino yet.
+4. Make sure you do not have the bluetooth module connected to your Arduino yet. Anything hanging off the TX and RX pins will interfere with the sketch upload.
 
 5. Upload the sketch to your Arduino. Power off your Arduino and connect your bluetooth module's TX to Arduino's RX and Bluetooth RX to 
-Arduino TX. Connect the power to your WS2182 LED strip and connect the LEDs data connection to digital pin 6 on your Arduino
+Arduino TX. Connect the power to your WS2182 LED strip and connect the LEDs data connection to digital pin 6 (or whatever you chose in step 3 above) on your Arduino
 
 6. In the Phonegap_Android\www directory, edit settings.js and change the MAC address in the line starting with  var defaultBtAddress = 
 and the UUID in the line starting with var uuid =   to match your own device details.
