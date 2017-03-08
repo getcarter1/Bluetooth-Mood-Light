@@ -47,8 +47,9 @@ String fname;
 //It's all a set up, Guv !
 
 void setup() {
- //Connection speed must be same as app setting in settings.js
- Serial.begin(38400); //Default on most bluetooth modules is 9600. Check your documentation for your device for how to change baud rate.
+ //Baud must be same as app setting in settings.js and your bluetooth module baud. Mine is set to 57600. 
+ Serial.begin(57600); //Default on most bluetooth modules is 9600. Check your documentation for your device for how to change baud rate. 
+ 
  
  //Set up 2 extra pins to play with later.... add more if you want or comment them out if you don't think you'll want more stuff to control.
  pinMode(3,OUTPUT); //Make pin 3 an output
