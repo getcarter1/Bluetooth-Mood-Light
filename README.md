@@ -15,7 +15,7 @@ INSTALLATION
 
 2. From the downloaded Arduino\Mood_light\libraries directory, copy the Neopixel directory into your Arduino library directory.
 
-3. Open the Mood_Light sketch and modify the serial baudrate, Serial.begin(38400) Change this to match your Bluetooth modules baud. Modify the line containing " Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800) ". 8 is the number of leds I am using and 6 is the Arduino pin I am connecting the led data pin to. Change the values to suit your setup. Save the sketch !!
+3. Open the Mood_Light sketch and modify the serial baudrate, Serial.begin(57600) Change this to match your Bluetooth modules baud. Modify the line containing " Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800) ". 8 is the number of leds I am using and 6 is the Arduino pin I am connecting the led data pin to. Change the values to suit your setup. Save the sketch !!
 
 4. Make sure you do not have the bluetooth module connected to your Arduino yet. Anything hanging off the TX and RX pins will interfere with the sketch upload.
 
