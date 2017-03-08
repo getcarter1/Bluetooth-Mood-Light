@@ -1,7 +1,7 @@
 
 
-# arduino-ble
-Arduino bluetoothBLE + phone gap
+# Bluetooth Mood-Light
+Arduino bluetooth +WS2182 LEDs + phonegap app
 
 Android App to change colour of WS2182 adressable LEDs connected to an Arduino.
 
