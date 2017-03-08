@@ -25,18 +25,20 @@
 <input class="jscolor {width:243, height:150, position:'bottom',borderColor:'#FFF', insetColor:'#FFF', backgroundColor:'#666'}" id="myColor" value="#ff0080" onchange="myFunction()"</input>
 
 <script>
+<!-- A function to convert hex to RGB values -->
 (function(a){
 a["toRGB"]=function(a){
 var b=parseInt(a,16);return[b>>16,b>>8&255,b&255]};
 a["toHex"]=function(a,b,c){
 return(c|b<<8|a<<16|1<<24).toString(16).slice(1)}})(this);
 
+<!-- A function to grab the hex values from the colour picker and assign to variable 'x' -->
 function myFunction() {
     var x = document.getElementById("myColor").value;
-    // document.getElementById("demo").innerHTML = x;
-	
-	//$(this).sendRawString(x);
-//convert Hexadecimal color to RGB values
+	//$(this).sendRawString(x);  //uncomment to send hex values to serial
+
+<!-- Now send 'x' to RGB converter function and send it's output 'rgb' to serial -->	
+   //convert Hexadecimal color to RGB values
     var rgb = toRGB(x);
     $(this).sendRawString(rgb);
 

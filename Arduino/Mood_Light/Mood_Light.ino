@@ -31,7 +31,9 @@ Lots of room for adding stuff.
 
 // Well now. I do declare !
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(8, 6, NEO_GRB + NEO_KHZ800);  /*Change to match the number of LEDs you are using and 
+the Arduino pin you want to use. EG: I have 8 leds connected to pin 6 , hence the 8, 6,  */
+
 int    involtPin[14] = {}; //equals involt.pin.P in app
 String involtString[2] ={}; //equals involt.pin.S in app 
 
